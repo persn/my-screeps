@@ -1,4 +1,8 @@
-export class Builder {
+import { Role } from './role';
+
+export class Builder extends Role {
+    get role(): string { return 'builder'; }
+
     run(creep: Creep) {
         if(creep.memory.building && creep.carry.energy == 0) {
             creep.memory.building = false;

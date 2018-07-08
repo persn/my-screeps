@@ -1,4 +1,8 @@
-export class Upgrader {
+import { Role } from './role';
+
+export class Upgrader extends Role {
+    get role(): string { return 'upgrader'; };
+
     run(creep: Creep) {
         if(creep.carry.energy == 0) {
             const sources = creep.room.find(FIND_SOURCES);

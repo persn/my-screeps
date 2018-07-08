@@ -10,34 +10,12 @@ export const loop = ErrorMapper.wrapLoop(() => {
     const upgrader: Upgrader = new Upgrader();
     const builder: Builder = new Builder();
 
-    // Generate creeps
-    /*
-    let harvesterCount = 0;
-    let upgraderCount = 0;
+    // Spawn creep
+    harvester.spawn();
+    upgrader.spawn();
+    builder.spawn();
 
-    for (const n in Game.creeps) {
-        const creep: Creep = Game.creeps[n];
-
-        if(creep.memory.role == 'harvester') {
-            harvesterCount++;
-        } else if(creep.memory.role == 'upgrader') {
-            upgraderCount++;
-        }
-    }
-
-    if(harvesterCount === 0){
-        Game.spawns['Spawn1'].createCreep([MOVE, WORK, CARRY], 'Harvester1');
-        Game.creeps['Harvester1'].memory.role = 'harvester';
-        console.log('Harvester generated');
-    }
-    if(upgraderCount === 0) {
-        Game.spawns['Spawn1'].createCreep([MOVE, WORK, CARRY], 'Upgrader1');
-        Game.creeps['Upgrader1'].memory.role = 'upgrader';
-        console.log('Upgrader generated');
-    }
-    */
-
-    // Automate worker
+    // Automate creep
     for (const n in Game.creeps) {
         const creep: Creep = Game.creeps[n];
 

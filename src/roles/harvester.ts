@@ -1,4 +1,8 @@
-export class Harvester {
+import { Role } from './role';
+
+export class Harvester extends Role {
+    get role(): string { return 'harvester'; }
+
     run(creep: Creep): void {
         if (creep.carry.energy < creep.carryCapacity) {
             const sources = creep.room.find(FIND_SOURCES);
